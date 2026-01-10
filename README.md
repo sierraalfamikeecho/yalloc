@@ -1,2 +1,2 @@
 # Yalloc
-A meme memory management library written in C.
+A very basic memory management library written in C.

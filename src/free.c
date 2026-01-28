@@ -1,4 +1,4 @@
-#include "free.h"
+#include "yalloc.h"
 
 void free(void *block) {
     header_t *header, *temp;
@@ -14,13 +14,13 @@ void free(void *block) {
         if (head == tail) {
             head = tail = NULL;
         } else {
-            tmp = head;
-            while (tmp) {
-                if(tmp->s.next == tail) {
-                    tmp->s.next = NULL;
-                    tail = tmp;
+            temporary = head;
+            while (temporary) {
+                if(temporary->s.next == tail) {
+                    temporary->s.next = NULL;
+                    tail = temporary;
                 }
-                tmp = tmp->s.next;
+                temporary = temporary->s.next;
             }
         }
         sbrk(0 - sizeof(header_t) - header->s.size);

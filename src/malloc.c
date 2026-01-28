@@ -1,11 +1,11 @@
-#include "malloc.h"
+#include "yalloc.h"
 
-void malloc(size_t size) {
-    size_t t_size;
-    void *blk;
+void *malloc(size_t size) {
+    size_t total_size;
+    void *block;
     header_t *header;
 
-    if (!size) return NULL;
+    if (size == 0) return NULL;
 
     pthread_mutex_lock(&global_malloc_lock);
     header = get_free_block(size);

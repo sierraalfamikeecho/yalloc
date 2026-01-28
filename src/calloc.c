@@ -1,4 +1,4 @@
-#include "calloc.c"
+#include "yalloc.h"
 
 void *calloc(size_t num, size_t nsize) {
     size_t size;
@@ -14,7 +14,7 @@ void *calloc(size_t num, size_t nsize) {
 
     if (!block) return NULL;
 
-    memset(block, 0, size);
+    memset_y(size, block, 0);
 
     return block;
 }

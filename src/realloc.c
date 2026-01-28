@@ -1,4 +1,4 @@
-#include "realloc.h"
+#include "yalloc.h"
 
 void *realloc(void *block, size_t size) {
     header_t *header;
